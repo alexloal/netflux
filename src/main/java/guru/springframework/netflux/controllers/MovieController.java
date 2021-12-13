@@ -21,12 +21,12 @@ public class MovieController {
     private final MovieService movieService;
 
     @GetMapping("/{id}")
-    Mono<Movie> getMovieById(@PathVariable String id) {
+    public Mono<Movie> getMovieById(@PathVariable String id) {
         return movieService.getMovieById(id);
     }
 
     @GetMapping
-    Flux<Movie> getAllMovies() {
+    public Flux<Movie> getAllMovies() {
         return movieService.getAllMovies();
     }
 }
